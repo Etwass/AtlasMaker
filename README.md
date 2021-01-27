@@ -25,5 +25,8 @@ AtlasMaker generates an atlas of images from a psd file, an accompanying descrip
   <li> Perhaps the following limitation follows from the previous paragraph: the color channel in the psd file must be 8-bit. In fact, it was a very long time ago, and I do not remember why this limitation was due to me or because of the ImageMagick library. </li>
 </ol>
 
+# Application
+<p>Win32 application <a href="https://sourceforge.net/projects/atlasmaker/files/AtlasMaker.zip/download">link</a></p>
+
 # P.S.
 <p>Sorry for google translate</p>
