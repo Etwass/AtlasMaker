@@ -68,16 +68,16 @@
 
 #define XML_INDENT            2
 
-typedef struct tagIMAGESOURCE                         // Ñòðóêòóðà, ñ èñõîäíûìè èçîáðàæåíèÿìè.
+typedef struct tagIMAGESOURCE                         // Ð¡Ñ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ð°, Ñ Ð¸ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¼Ð¸ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸ÑÐ¼Ð¸.
   {
-    long int x;                                       // Àáñöèññà.
-    long int y;                                       // Îðäèíàòà.
-    long int z;                                       // Àïïëèêàòà.
-    unsigned int w;                                   // Øèðèíà èçîáðàæåíèÿ â ïèêñåëÿõ.
-    unsigned int h;                                   // Âûñîòà èçîáðàæåíèÿ â ïèêñåëÿõ.
-    char *m_pName;                                    // Èìÿ.
-    char *m_pTransname;                               // Èìÿ â òðàíñëèòå.
-    void *m_pByte;                                    // Ìàññèâ áàéò.
+    long int x;                                       // ÐÐ±ÑÑ†Ð¸ÑÑÐ°.
+    long int y;                                       // ÐžÑ€Ð´Ð¸Ð½Ð°Ñ‚Ð°.
+    long int z;                                       // ÐÐ¿Ð¿Ð»Ð¸ÐºÐ°Ñ‚Ð°.
+    unsigned int w;                                   // Ð¨Ð¸Ñ€Ð¸Ð½Ð° Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ Ð² Ð¿Ð¸ÐºÑÐµÐ»ÑÑ….
+    unsigned int h;                                   // Ð’Ñ‹ÑÐ¾Ñ‚Ð° Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ Ð² Ð¿Ð¸ÐºÑÐµÐ»ÑÑ….
+    char *m_pName;                                    // Ð˜Ð¼Ñ.
+    char *m_pTransname;                               // Ð˜Ð¼Ñ Ð² Ñ‚Ñ€Ð°Ð½ÑÐ»Ð¸Ñ‚Ðµ.
+    void *m_pByte;                                    // ÐœÐ°ÑÑÐ¸Ð² Ð±Ð°Ð¹Ñ‚.
   } IMAGESOURCE;
 
 typedef struct tagXML
@@ -119,24 +119,24 @@ char *ConvertToTranslit(char *pText)
       {
         switch(*pPointer)
           {
-            case '¸':
-            case '¨':
-            case 'æ':
-            case 'Æ':
-            case 'ö':
-            case 'Ö':
-            case '÷':
-            case '×':
-            case 'ø':
-            case 'Ø':
-            case 'þ':
-            case 'Þ':
-            case 'ÿ':
-            case 'ß':
+            case 'Ñ‘':
+            case 'Ð':
+            case 'Ð¶':
+            case 'Ð–':
+            case 'Ñ†':
+            case 'Ð¦':
+            case 'Ñ‡':
+            case 'Ð§':
+            case 'Ñˆ':
+            case 'Ð¨':
+            case 'ÑŽ':
+            case 'Ð®':
+            case 'Ñ':
+            case 'Ð¯':
               iAdditionalBytes++;
               break;
-            case 'ù':
-            case 'Ù':
+            case 'Ñ‰':
+            case 'Ð©':
               iAdditionalBytes+=2;
           }
         pPointer++;
@@ -147,214 +147,214 @@ char *ConvertToTranslit(char *pText)
       {
         switch(*pPointer)
           {
-            case 'à':
+            case 'Ð°':
               *(pOut+i++)='a';
               break;
-            case 'á':
+            case 'Ð±':
               *(pOut+i++)='b';
               break;
-            case 'â':
+            case 'Ð²':
               *(pOut+i++)='v';
               break;
-            case 'ã':
+            case 'Ð³':
               *(pOut+i++)='g';
               break;
-            case 'ä':
+            case 'Ð´':
               *(pOut+i++)='d';
               break;
-            case 'å':
+            case 'Ðµ':
               *(pOut+i++)='e';
               break;
-            case '¸':
+            case 'Ñ‘':
               *(pOut+i++)='y';
               *(pOut+i++)='o';
               break;
-            case 'æ':
+            case 'Ð¶':
               *(pOut+i++)='z';
               *(pOut+i++)='h';
               break;
-            case 'ç':
+            case 'Ð·':
               *(pOut+i++)='z';
               break;
-            case 'è':
+            case 'Ð¸':
               *(pOut+i++)='i';
               break;
-            case 'é':
+            case 'Ð¹':
               *(pOut+i++)='y';
               break;
-            case 'ê':
+            case 'Ðº':
               *(pOut+i++)='k';
               break;
-            case 'ë':
+            case 'Ð»':
               *(pOut+i++)='l';
               break;
-            case 'ì':
+            case 'Ð¼':
               *(pOut+i++)='m';
               break;
-            case 'í':
+            case 'Ð½':
               *(pOut+i++)='n';
               break;
-            case 'î':
+            case 'Ð¾':
               *(pOut+i++)='o';
               break;
-            case 'ï':
+            case 'Ð¿':
               *(pOut+i++)='p';
               break;
-            case 'ð':
+            case 'Ñ€':
               *(pOut+i++)='r';
               break;
-            case 'ñ':
+            case 'Ñ':
               *(pOut+i++)='s';
               break;
-            case 'ò':
+            case 'Ñ‚':
               *(pOut+i++)='t';
               break;
-            case 'ó':
+            case 'Ñƒ':
               *(pOut+i++)='u';
               break;
-            case 'ô':
+            case 'Ñ„':
               *(pOut+i++)='f';
               break;
-            case 'õ':
+            case 'Ñ…':
               *(pOut+i++)='h';
               break;
-            case 'ö':
+            case 'Ñ†':
               *(pOut+i++)='t';
               *(pOut+i++)='s';
               break;
-            case '÷':
+            case 'Ñ‡':
               *(pOut+i++)='c';
               *(pOut+i++)='h';
               break;
-            case 'ø':
+            case 'Ñˆ':
               *(pOut+i++)='s';
               *(pOut+i++)='h';
               break;
-            case 'ù':
+            case 'Ñ‰':
               *(pOut+i++)='s';
               *(pOut+i++)='c';
               *(pOut+i++)='h';
               break;
-            case 'ú':
-            case 'Ú':
-            case 'ü':
-            case 'Ü':
+            case 'ÑŠ':
+            case 'Ðª':
+            case 'ÑŒ':
+            case 'Ð¬':
             case '"':
               *(pOut+i++)='\'';
               break;
-            case 'û':
+            case 'Ñ‹':
               *(pOut+i++)='y';
               break;
-            case 'ý':
+            case 'Ñ':
               *(pOut+i++)='e';
               break;
-            case 'þ':
+            case 'ÑŽ':
               *(pOut+i++)='y';
               *(pOut+i++)='u';
               break;
-            case 'ÿ':
+            case 'Ñ':
               *(pOut+i++)='y';
               *(pOut+i++)='a';
               break;
-            case 'À':
+            case 'Ð':
               *(pOut+i++)='A';
               break;
-            case 'Á':
+            case 'Ð‘':
               *(pOut+i++)='B';
               break;
-            case 'Â':
+            case 'Ð’':
               *(pOut+i++)='V';
               break;
-            case 'Ã':
+            case 'Ð“':
               *(pOut+i++)='G';
               break;
-            case 'Ä':
+            case 'Ð”':
               *(pOut+i++)='D';
               break;
-            case 'Å':
+            case 'Ð•':
               *(pOut+i++)='E';
               break;
-            case '¨':
+            case 'Ð':
               *(pOut+i++)='Y';
               *(pOut+i++)='o';
               break;
-            case 'Æ':
+            case 'Ð–':
               *(pOut+i++)='Z';
               *(pOut+i++)='h';
               break;
-            case 'Ç':
+            case 'Ð—':
               *(pOut+i++)='Z';
               break;
-            case 'È':
+            case 'Ð˜':
               *(pOut+i++)='I';
               break;
-            case 'É':
+            case 'Ð™':
               *(pOut+i++)='Y';
               break;
-            case 'Ê':
+            case 'Ðš':
               *(pOut+i++)='K';
               break;
-            case 'Ë':
+            case 'Ð›':
               *(pOut+i++)='L';
               break;
-            case 'Ì':
+            case 'Ðœ':
               *(pOut+i++)='M';
               break;
-            case 'Í':
+            case 'Ð':
               *(pOut+i++)='N';
               break;
-            case 'Î':
+            case 'Ðž':
               *(pOut+i++)='O';
               break;
-            case 'Ï':
+            case 'ÐŸ':
               *(pOut+i++)='P';
               break;
-            case 'Ð':
+            case 'Ð ':
               *(pOut+i++)='R';
               break;
-            case 'Ñ':
+            case 'Ð¡':
               *(pOut+i++)='S';
               break;
-            case 'Ò':
+            case 'Ð¢':
               *(pOut+i++)='T';
               break;
-            case 'Ó':
+            case 'Ð£':
               *(pOut+i++)='U';
               break;
-            case 'Ô':
+            case 'Ð¤':
               *(pOut+i++)='F';
               break;
-            case 'Õ':
+            case 'Ð¥':
               *(pOut+i++)='H';
               break;
-            case 'Ö':
+            case 'Ð¦':
               *(pOut+i++)='T';
               *(pOut+i++)='s';
               break;
-            case '×':
+            case 'Ð§':
               *(pOut+i++)='C';
               *(pOut+i++)='h';
               break;
-            case 'Ø':
+            case 'Ð¨':
               *(pOut+i++)='S';
               *(pOut+i++)='h';
               break;
-            case 'Ù':
+            case 'Ð©':
               *(pOut+i++)='S';
               *(pOut+i++)='c';
               *(pOut+i++)='h';
               break;
-            case 'Û':
+            case 'Ð«':
               *(pOut+i++)='Y';
               break;
-            case 'Ý':
+            case 'Ð­':
               *(pOut+i++)='E';
               break;
-            case 'Þ':
+            case 'Ð®':
               *(pOut+i++)='Y';
               *(pOut+i++)='u';
               break;
-            case 'ß':
+            case 'Ð¯':
               *(pOut+i++)='Y';
               *(pOut+i++)='a';
               break;
@@ -574,7 +574,7 @@ long int Make(HANDLE hOutput,const char *pInname,const char *pOutname,unsigned i
         PixelPacket *pPixels=0;
 
         memset(&mpp,0,sizeof(MagickPixelPacket));
-        DestroyImage(RemoveFirstImageFromList(&pImages));                   // Ïî÷åìó-òî èç psd-ôàéëà âûòÿãèâàåòñÿ âíà÷àëå òî ëè ôîí, òî ëè âñå ñëîè êàê îäíî öåëîå è òîëüêî ïîñëå ýòîãî èäóò âñå ñëîè ïî î÷åðåäè.
+        DestroyImage(RemoveFirstImageFromList(&pImages));                   // ÐŸÐ¾Ñ‡ÐµÐ¼Ñƒ-Ñ‚Ð¾ Ð¸Ð· psd-Ñ„Ð°Ð¹Ð»Ð° Ð²Ñ‹Ñ‚ÑÐ³Ð¸Ð²Ð°ÐµÑ‚ÑÑ Ð²Ð½Ð°Ñ‡Ð°Ð»Ðµ Ñ‚Ð¾ Ð»Ð¸ Ñ„Ð¾Ð½, Ñ‚Ð¾ Ð»Ð¸ Ð²ÑÐµ ÑÐ»Ð¾Ð¸ ÐºÐ°Ðº Ð¾Ð´Ð½Ð¾ Ñ†ÐµÐ»Ð¾Ðµ Ð¸ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð¿Ð¾ÑÐ»Ðµ ÑÑ‚Ð¾Ð³Ð¾ Ð¸Ð´ÑƒÑ‚ Ð²ÑÐµ ÑÐ»Ð¾Ð¸ Ð¿Ð¾ Ð¾Ñ‡ÐµÑ€ÐµÐ´Ð¸.
         while((pLayer=RemoveFirstImageFromList(&pImages))!=(Image *)NULL)
           {
             //sprintf(pImageInfo->filename,"%04u.png",i++);
@@ -771,7 +771,7 @@ long int Make(HANDLE hOutput,const char *pInname,const char *pOutname,const char
               uiSuccess++;
               OpenTAG(pXML,"Image","name",pis[i].m_pTransname,FALSE);
               MakeAtomTAGi(pXML,"ScreenData","x",pis[i].x,"y",pis[i].y,"z",pis[i].z,"w",pis[i].w,"h",pis[i].h);
-              if(fTex)      // Ïåðåäåëàòü ýòó ïðîâåðêó íà óêàçàòåëü íà ôóíêöèþ
+              if(fTex)      // ÐŸÐµÑ€ÐµÐ´ÐµÐ»Ð°Ñ‚ÑŒ ÑÑ‚Ñƒ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÑƒ Ð½Ð° ÑƒÐºÐ°Ð·Ð°Ñ‚ÐµÐ»ÑŒ Ð½Ð° Ñ„ÑƒÐ½ÐºÑ†Ð¸ÑŽ
                 {
                   float left=(float)(prctui->left+dx)/(w-1),top=(float)(prctui->top+dy)/(h-1),right=(float)(prctui->right-dx)/(w-1),bottom=(float)(prctui->bottom-dy)/(h-1);
 
